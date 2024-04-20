@@ -1,17 +1,15 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import persistReducer from 'redux-persist/es/persistReducer';
-import NotesDataSlice from './NotesDataSlice';
 import ChatRosterSlice from './ChatRosterSlice';
 
 let persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    whitelist: ['notesData']
+    // whitelist: ['chatRoster']
 }
 
 let rootReducer = combineReducers({
-    notesData: NotesDataSlice,
     chatRoster: ChatRosterSlice,
 })
 
