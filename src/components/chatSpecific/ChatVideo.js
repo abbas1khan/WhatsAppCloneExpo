@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import * as VideoThumbnails from 'expo-video-thumbnails';
 import { colors, sizes } from '../../utils/Theme';
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons'
-import { Video, ResizeMode } from 'expo-av';
 import { useNavigation } from '@react-navigation/native';
 import { formatTime } from '../../utils/Helper';
 import { LinearGradient } from 'expo-linear-gradient';
