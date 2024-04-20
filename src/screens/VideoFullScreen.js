@@ -73,7 +73,7 @@ const VideoFullScreen = () => {
             await videoRef?.current?.playAsync()
             setTimeout(() => {
                 setShowIcons(false)
-            }, 1000);
+            }, 500);
         }
     }
 
