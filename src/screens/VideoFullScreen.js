@@ -213,7 +213,7 @@ const VideoFullScreen = () => {
 
 
 
-            <View style={{ opacity: showIcons ? 1 : 0, height: 56, width: "100%", position: 'absolute', flexDirection: 'row', backgroundColor: hexToRGBA(colors.background, 0.5), }}>
+            <View style={{ opacity: showIcons ? 1 : 0, height: showIcons ? 56 : 1, width: "100%", position: 'absolute', flexDirection: 'row', backgroundColor: hexToRGBA(colors.background, 0.5), }}>
                 <Pressable
                     disabled={!showIcons}
                     onPress={() => navigation.goBack()}
