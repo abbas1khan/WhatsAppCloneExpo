@@ -6,8 +6,9 @@ import ChatRosterSlice from './ChatRosterSlice';
 let persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    // whitelist: ['chatRoster']
 }
+// whitelist: ['chatRoster']
+// blacklist: ['chatRoster']
 
 let rootReducer = combineReducers({
     chatRoster: ChatRosterSlice,

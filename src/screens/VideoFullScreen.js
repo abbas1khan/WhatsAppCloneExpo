@@ -303,7 +303,6 @@ const VideoFullScreen = () => {
                 </Text>
 
                 <LinearGradient
-                    // Background Linear Gradient
                     colors={[colors.transparent, colors.black]}
                     style={{ width: sizes.width, height: '80%', position: 'absolute', zIndex: -1 }}
                 />

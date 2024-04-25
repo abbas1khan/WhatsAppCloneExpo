@@ -1,10 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
-import uuid from 'react-native-uuid';
 
 const ChatRosterSlice = createSlice({
     name: 'ChatRosterSlice',
     initialState: {
-        chats: []
+        themeData: {
+            mode: 'device',
+            value: 'light',
+        },
+        chats: [],
     },
     reducers: {
         addNewChatToRoster(state, action) {
@@ -37,13 +40,18 @@ const ChatRosterSlice = createSlice({
                 };
             }
         },
+        updateAppTheme(state, action) {
+            state.themeData.mode = action.payload?.mode || "device"
+            state.themeData.value = action?.payload?.value || "light"
+        },
     }
 })
 
 export const {
     addNewChatToRoster,
     sendMessage,
-    deleteMessage
+    deleteMessage,
+    updateAppTheme
 } = ChatRosterSlice.actions
 
 export default ChatRosterSlice.reducer
