@@ -4,7 +4,7 @@ import { colors } from "../../utils/Theme";
 import { View } from "react-native";
 
 const DoubleBlueTickSVG = ({ size = 23, color = colors.blueTick }) => (
-  <View style={{ margin: -4 }}>
+  <View style={{ margin: -4, marginBottom: -3 }}>
     <Svg
       width={size}
       height={size}
