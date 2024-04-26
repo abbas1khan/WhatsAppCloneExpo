@@ -14,6 +14,12 @@ const HomeScreen = () => {
 
 
     const chatRoster = useSelector((state) => state.chatRoster.chats)
+    const theme = useSelector((state) => state.chatRoster.themeData.value)
+    const isLightTheme = theme === 'light'
+    const themeColors = {
+        white_background: isLightTheme ? colors.white : colors.background
+    }
+
     // console.log("🚀 ~ HomeScreen ~ chatRoster:", JSON.stringify(chatRoster))
 
 
@@ -66,7 +72,7 @@ const HomeScreen = () => {
                     data={chatRoster}
                     ref={flatListRef}
                     showsVerticalScrollIndicator={false}
-                    keyExtractor={(item, index) => index}
+                    keyExtractor={(item, index) => item?.chatId}
                     renderItem={renderChatCard}
                     contentContainerStyle={{ paddingTop: 6, paddingBottom: 20 }}
                     onDragEnd={({ data }) => {

@@ -34,13 +34,9 @@ function groupedDays(messages) {
 
 function generateItems(messages) {
   const days = groupedDays(messages);
-  const sortedDays = Object.keys(days).sort(
-    (x, y) => moment(y, 'YYYY-MM-DD').unix() - moment(x, 'YYYY-MM-DD').unix()
-  );
+  const sortedDays = Object.keys(days).sort((x, y) => moment(y, 'YYYY-MM-DD').unix() - moment(x, 'YYYY-MM-DD').unix());
   const items = sortedDays.reduce((acc, date) => {
-    const sortedMessages = days[date].sort(
-      (x, y) => new Date(y.createdAt) - new Date(x.createdAt)
-    );
+    const sortedMessages = days[date].sort((x, y) => new Date(y.createdAt) - new Date(x.createdAt));
     const unique = uuid.v4()
     return acc.concat([...sortedMessages, { type: 'day', date, _id: unique, messageId: unique }]);
   }, []);
